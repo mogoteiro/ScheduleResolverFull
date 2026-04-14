@@ -27,16 +27,16 @@ TaskModel ({
 
     Map<String, dynamic> toJson() {
         return {
-            'id':id, 
-            'title':title, 
-            'category':category,
-            'date':date.toIso8601String().split('T').first,
-            'startTime':'/${startTime.hour}:/${startTime.minute}',
-            'endTime':'/${endTime.hour}:/${endTime.minute}',
-            'urgency':urgency, 
-            'importance':importance,
-            'estimatedEffortHours':estimatedEffortHours,
-            'energyLevel':energyLevel,
+            'id': id, 
+            'title': title, 
+            'category': category,
+            'date': date.toIso8601String().split('T').first,
+            'startTime': '${startTime.hour.toString().padLeft(2, '0')}:${startTime.minute.toString().padLeft(2, '0')}',
+            'endTime': '${endTime.hour.toString().padLeft(2, '0')}:${endTime.minute.toString().padLeft(2, '0')}',
+            'urgency': urgency, 
+            'importance': importance,
+            'estimatedEffortHours': estimatedEffortHours,
+            'energyLevel': energyLevel,
         };
     }
 }
